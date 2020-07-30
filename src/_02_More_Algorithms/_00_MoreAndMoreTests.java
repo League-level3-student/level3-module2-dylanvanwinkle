@@ -12,21 +12,22 @@ public class _00_MoreAndMoreTests {
 
 	@Test
 	public void MultTest() {
-
-		assertEquals("10 x 0 = 0", multiply(10, 0));
-		assertEquals("10 x 10 = 100", multiply(10, 10));
-		assertEquals("8 x 11 = 88", multiply(8, 11));
+		Multiply m = new Multiply();
+		assertEquals(0, m.multiply(10, 0));
+		assertEquals(100, m.multiply(10, 10));
+		assertEquals(88, m.multiply(8, 11));
 	}
 
 	@Test
 	public void PrimeTest() {
+		IsPrime ip = new IsPrime();
 
-		assertTrue(isPrime(3));
-		assertTrue(isPrime(5));
-		assertTrue(isPrime(541));
-		assertFalse(isPrime(4));
-		assertFalse(isPrime(12));
-		assertFalse(isPrime(527));
+		assertTrue(ip.isPrime(3));
+		assertTrue(ip.isPrime(5));
+		assertTrue(ip.isPrime(541));
+		assertFalse(ip.isPrime(4));
+		assertFalse(ip.isPrime(12));
+		assertFalse(ip.isPrime(527));
 
 	}
 
@@ -44,6 +45,15 @@ public class _00_MoreAndMoreTests {
 
 	}
 
+	private boolean isSquare(int i) {
+		// TODO Auto-generated method stub
+		double s = Math.sqrt(i);
+		if (Math.floor(s) - s == 0) {
+			return true;
+		}
+		return false;
+	}
+
 	@Test
 	public void CubeTest() {
 
@@ -55,6 +65,15 @@ public class _00_MoreAndMoreTests {
 		assertFalse(isCube(22));
 		assertFalse(isCube(143));
 
+	}
+
+	private boolean isCube(int i) {
+		for (int j = 0; j <= i; j++) {
+			if (Math.pow(j, 3) == i) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }
