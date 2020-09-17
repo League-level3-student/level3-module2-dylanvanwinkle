@@ -66,13 +66,13 @@ return hights.get(hights.size() - 1);
             // array elements at i and j.
             //   In the same if-statement, increase i by 1 
             //   and decrease j by 1.
-        if (i <= j) {
-			Double listAti = hights.get(i);
-			hights.add(i,hights.get(j));
-			hights.add(j,listAti);
-			i++;
-			j--;
-		}
+            if (i <= j) {
+    			Double arrayAti = hights.get(i);
+    			hights.set(i,hights.get(j)); 
+    			hights.set(j, arrayAti);
+    			i++;
+    			j--;
+    		}
         }
         //8. if low is less than j, call the quickSort method using
         //   low for the low and j for the high
@@ -85,6 +85,26 @@ return hights.get(hights.size() - 1);
 		quickSort(hights,i,high);
 	}
         
+	}
+	public static Object findLongestWord(List<String> words) {
+		// TODO Auto-generated method stub
+		String Longest = "";
+		for (int i = 0; i < words.size(); i++) {
+			if(words.get(i).length() > Longest.length()) {
+				Longest = words.get(i);
+			}
+		}
+		return Longest;
+	}
+	public static Boolean containsSOS(List<String> message) {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < message.size(); i++) {
+			if (message.get(i).contains("... --- ...")) {
+				return true;		
+			}
+		}
+		return false;
+		
 	}
 
 }
