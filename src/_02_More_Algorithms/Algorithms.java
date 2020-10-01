@@ -15,7 +15,6 @@ public class Algorithms {
 	public static int linearSearch(List<String> eggs, String value) {
 		for (int i = 0; i < eggs.size(); i++) {
 			if (eggs.get(i).equals(value)) {
-				System.out.println(i);
 				return i;
 			}
 		}
@@ -117,5 +116,39 @@ public class Algorithms {
 		// TODO Auto-generated method stub
 		sort(results);
 		return results;
+	}
+
+	public static Object sortDNA(List<String> unsortedSequences) {
+		// TODO Auto-generated method stub
+sortString(unsortedSequences);
+		return unsortedSequences;
+	}
+	static void sortString(List<String> arr) {
+		for (int i = 0; i < arr.size(); i++) {
+			for (int j = 0; j < arr.size() - 1; j++) {
+				if (arr.get(j).length() > arr.get(j + 1).length()) {
+					String arrAt0 = arr.get(j);
+					arr.set(j,arr.get(j + 1));
+					arr.set(j + 1, arrAt0);
+				}
+			}
+		}
+	}
+
+	public static List<String> sortWords(List<String> words) {
+		// TODO Auto-generated method stub
+		sortStringAlphebeticaly(words);
+		return words;
+	}
+	static void sortStringAlphebeticaly(List<String> arr) {
+		for (int i = 0; i < arr.size(); i++) {
+			for (int j = 0; j < arr.size() - 1; j++) {
+				if (arr.get(j).compareTo(arr.get(j + 1)) > 0) {
+					String arrAt0 = arr.get(j);
+					arr.set(j,arr.get(j + 1));
+					arr.set(j + 1, arrAt0);
+				}
+			}
+		}
 	}
 }
